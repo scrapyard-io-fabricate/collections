@@ -3,6 +3,8 @@
 namespace Fabricate\NutsAndBolts;
 
 use Closure;
+use Fabricate\NutsAndBolts\Exceptions\ItemNotFoundException;
+use Fabricate\NutsAndBolts\Exceptions\MultipleItemsFoundException;
 use WeakMap;
 use ArrayAccess;
 use Traversable;
