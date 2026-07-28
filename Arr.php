@@ -1091,7 +1091,9 @@ class Arr
      */
     public static function sort(array $array, callable|array|string|null $callback = null): array
     {
-        return new Collection($array)->sortBy($callback)->all();
+        return is_null($callback)
+            ? new Collection($array)->sort()->all()
+            : new Collection($array)->sortBy($callback)->all();
     }
 
     /**
@@ -1106,7 +1108,9 @@ class Arr
      */
     public static function sortDesc(array $array, callable|array|string|null $callback = null): array
     {
-        return new Collection($array)->sortByDesc($callback)->all();
+        return is_null($callback)
+            ? new Collection($array)->sortDesc()->all()
+            : new Collection($array)->sortByDesc($callback)->all();
     }
 
     /**
